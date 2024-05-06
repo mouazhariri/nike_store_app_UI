@@ -17,8 +17,7 @@ abstract class RegisterModule {
   @preResolve
   Future<SharedPreferences> get sharedPreference => SharedPreferences.getInstance();
 
-  @LazySingleton()
-  Dio get dio => getDio();
+
 }
 
 @InjectableInit(
@@ -28,21 +27,4 @@ abstract class RegisterModule {
 )
 Future<void> configurationDependencies()async{
   await $initGetIt(sl);
-}
-Dio getDio() {
-  Dio dio = Dio(BaseOptions(
-      baseUrl: EndPoint.baseUrl,
-      headers: {
-        'Accept': 'application/json',
-        'Content_Type': 'application/json',
-      },
-      responseType: ResponseType.plain));
-
-  dio.interceptors.add(LogInterceptor(
-    request: true,
-    requestBody: true,
-    requestHeader: true,
-    responseBody: true,
-  ));
-  return dio;
 }

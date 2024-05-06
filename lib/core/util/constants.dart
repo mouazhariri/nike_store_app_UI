@@ -1,41 +1,7 @@
 import 'package:dio/dio.dart';
 
 class EndPoint {
-  static const baseUrl = "http://google.com";
-}
 
-class GetOption {
-  static Options options = Options();
-
-  ///* with token *///
-  static Options getOptionsWithToken(
-    String? token, {
-    String? language,
-    int isPagination = 0,
-  }) {
-    options.headers = {
-      "Accept": "application/json",
-      "Content-Type": "application/json",
-      "Accept-Language": language,
-      "Authorization": "Bearer $token",
-      "is-pagination": isPagination,
-    };
-    return options;
-  }
-
-  ///* without token *///
-  static Options getOptionsWithOutToken({
-    String? language,
-    int isPagination = 0,
-  }) {
-    options.headers = {
-      "Accept": "Application/json",
-      "content-type": "Application/json",
-      "Accept-language": language,
-      "is-pagination": isPagination,
-    };
-    return options;
-  }
 }
 
 class LocalKeys {
