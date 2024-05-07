@@ -25,27 +25,32 @@ class _FavoritePageState extends State<FavoritePage> {
             title: "Favorite Page",
             icon: ImagesMaster.heart,
           )),
-      body: GridView.builder(
-        padding: EdgeInsets.zero,
-        controller: controller,
+      body:SingleChildScrollView(child: Column
 
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 5,
-          crossAxisSpacing: 5,
-            childAspectRatio: 0.77
+         (children: [
+        GridView.builder(
+          padding: EdgeInsets.zero,
+          controller: controller,
+physics: NeverScrollableScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 5,
+              crossAxisSpacing: 5,
+              childAspectRatio: 0.77
 
+          ),
+          shrinkWrap: true,
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return FavCard(
+              name: shoesList[index].name,
+              image: shoesList[index].image,
+              price: shoesList[index].price,
+            );
+          },
         ),
-        shrinkWrap: true,
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return FavCard(
-            name: "nike",
-            image: ImagesMaster.shoe9,
-            price: "100",
-          );
-        },
-      ),
+        SizedBox(height: 100,)
+      ],),)
     );
   }
 }

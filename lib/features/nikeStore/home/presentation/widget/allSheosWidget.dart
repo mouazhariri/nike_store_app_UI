@@ -15,26 +15,7 @@ class AllShoesWidget extends StatefulWidget {
 class _AllShoesWidgetState extends State<AllShoesWidget> {
   final ScrollController controller = ScrollController();
 
-  final List<ShoesCard> shoesList = [
-    const ShoesCard(
-        name: 'Nike Jordan', image: ImagesMaster.shoe3, price: '302.00'),
-    const ShoesCard(
-        name: 'Nike Air max', image: ImagesMaster.shoe4, price: '499.99'),
-    const ShoesCard(
-        name: 'Nike Club max', image: ImagesMaster.shoe7, price: '150.00'),
-    const ShoesCard(
-        name: 'Nike Air jordan', image: ImagesMaster.shoe2, price: '850.00'),
-    const ShoesCard(
-        name: 'Nike max 270 essential',
-        image: ImagesMaster.shoe6,
-        price: '666.00'),
-    const ShoesCard(
-        name: 'Nike sport', image: ImagesMaster.shoe8, price: '250.00'),
-    const ShoesCard(
-        name: 'Nike zoom 100', image: ImagesMaster.shoe9, price: '100.00'),
-    const ShoesCard(
-        name: 'Nike black solid', image: ImagesMaster.shoe10, price: '75.00'),
-  ];
+
 
   @override
   Widget build(BuildContext context) {

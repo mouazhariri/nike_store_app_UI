@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_store/core/util/app_color.dart';
 
 import '../../../../../core/util/constants.dart';
 
@@ -23,7 +24,7 @@ class _FavCardState extends State<FavCard> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 201,
+      height: 180,
       width: 160,
       child: Card(
         color: Theme.of(context).colorScheme.background,
@@ -109,7 +110,7 @@ class _FavCardState extends State<FavCard> {
                       child: Container(
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.onPrimary,
+                          color: AppColor.getColorItem(),
                         ),
                       ),
                     ),
@@ -121,7 +122,7 @@ class _FavCardState extends State<FavCard> {
                       child: Container(
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: Colors.cyan,
+                          color:AppColor.getColorItem(),
                         ),
                       ),
                     ),
